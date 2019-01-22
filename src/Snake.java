@@ -9,7 +9,7 @@ public class Snake implements ActionListener {
     //cellMap is used to map player score and image icon array
     private int [] cellMap = {0,90,91,92,93,94,95,96,97,98,99,89,88,87,86,85,84,83,82,81,80,70,71,72,73,74,75,76,77,78,79,69,
             68,67,66,65,64,63,62,61,60,50,51,52,53,54,55,56,57,58,59,49,48,47,46,45,44,43,42,41,40,30,31,32,33,34,35,
-            36,37,38,39,29,28,27,26,25,24,23,22,21,20,10,11,12,13,14,15,16,17,18,19,9,8,6,7,5,4,3,2,1};
+            36,37,38,39,29,28,27,26,25,24,23,22,21,20,10,11,12,13,14,15,16,17,18,19,9,8,7,6,5,4,3,2,1};
 
     private JFrame mainFrame;    // main frame
     private JPanel contentPane;  // content pane used to hold all the panes
@@ -27,7 +27,7 @@ public class Snake implements ActionListener {
 
     private Snake(){
         // initialize player 1
-        p1 = new Player("vamsi");
+        p1 = new Player("Veda");
 
         // game panel with Grid Layout 10 by 10
         gamePanel =new JPanel(new GridLayout(10,10));
@@ -96,12 +96,12 @@ public class Snake implements ActionListener {
         if(p1.isWin()){
             JOptionPane.showMessageDialog(mainFrame, p1.name+" won the match");
         }
-        if(player1Previous!=0&&player1<=100) {
+        if(player1Previous!=0&&player1<100) {
             b[cellMap[player1]].setIcon(null);
             b[cellMap[player1]].setText("P1");
             b[cellMap[player1Previous]].setIcon(ic[cellMap[player1Previous]]);
         }
-        if(player1Previous==0){
+        if(player1Previous==0 && player1<100){
             b[cellMap[player1]].setIcon(null);
             b[cellMap[player1]].setText("P1");
         }
