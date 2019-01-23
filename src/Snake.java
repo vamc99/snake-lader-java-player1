@@ -97,13 +97,11 @@ public class Snake implements ActionListener {
             JOptionPane.showMessageDialog(mainFrame, p1.name+" won the match");
         }
         if(player1Previous!=0&&player1<100) {
-            b[cellMap[player1]].setIcon(null);
-            b[cellMap[player1]].setText("P1");
+            b[cellMap[player1]].setIcon(new ImageIcon("images/blue.jpg"));
             b[cellMap[player1Previous]].setIcon(ic[cellMap[player1Previous]]);
         }
         if(player1Previous==0 && player1<100){
-            b[cellMap[player1]].setIcon(null);
-            b[cellMap[player1]].setText("P1");
+            b[cellMap[player1]].setIcon(new ImageIcon("images/blue.jpg"));
         }
     }
 }
