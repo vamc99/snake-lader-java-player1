@@ -42,14 +42,13 @@ public class Player {
     }
 
     public int calculatePlayerValue(int diceValue) {
-        previousScore = score;
-        score = score + diceValue;
-        System.out.println("SCORE:  "+score+"   PSCORE:   "+previousScore+"   Dice:   "+diceValue);
 
-        if(score > WINPOINT) {
-            score = score - diceValue;
+        if(score + diceValue > WINPOINT) {
             return score;
         }
+
+        previousScore = score; // update previous score only if the total score less than 100
+        score = score + diceValue;
         if(null!= snake.get(score)) {
             System.out.println("swallowed by snake");
             score = snake.get(score);
@@ -58,6 +57,7 @@ public class Player {
             System.out.println("climb up the ladder");
             score = ladder.get(score);
         }
+        System.out.println("SCORE:  "+score+"   PSCORE:   "+previousScore+"   Dice:   "+diceValue);
         return score;
     }
 
